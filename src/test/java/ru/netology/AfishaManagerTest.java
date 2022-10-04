@@ -40,6 +40,7 @@ class AfishaManagerTest {
 
         Assertions.assertArrayEquals(expected, actual);
     }
+
     @Test
     public void addAllFilmsWithoutLimit() {
         AfishaManager manager2 = new AfishaManager(5);
@@ -58,17 +59,38 @@ class AfishaManagerTest {
 
     @Test
     public void FindFiveLastFilms() {
+        AfishaManager manager3 = new AfishaManager(5);
 
-        String[] actual = manager.findLast(5);
-        String[] expected = {"Служебный роман", "Побег из Шоушенка", "Криминальное чтиво", "Джентльмены удачи", "Властелин колец"};
+        manager3.add("Служебный роман");
+        manager3.add("Побег из Шоушенка");
+        manager3.add("Криминальное чтиво");
+        manager3.add("Джентльмены удачи");
+        manager3.add("Властелин колец");
+
+        String[] actual = manager3.findLast();
+        String[] expected = {"Властелин колец", "Джентльмены удачи", "Криминальное чтиво", "Побег из Шоушенка", "Служебный роман"};
 
         Assertions.assertArrayEquals(expected, actual);
     }
 
+
     @Test
     public void FindTenLastFilms() {
+        AfishaManager manager4 = new AfishaManager(10);
 
-        String[] actual = manager.findLast(10);
+        manager4.add("Игра престолов");
+        manager4.add("Афоня");
+        manager4.add("Молчание ягнят");
+        manager4.add("Терминатор");
+        manager4.add("Любовь и голуби");
+        manager4.add("Властелин колец");
+        manager4.add("Джентльмены удачи");
+        manager4.add("Криминальное чтиво");
+        manager4.add("Побег из Шоушенка");
+        manager4.add("Служебный роман");
+
+
+        String[] actual = manager4.findLast();
 
         String[] expected = {"Служебный роман", "Побег из Шоушенка", "Криминальное чтиво", "Джентльмены удачи", "Властелин колец", "Любовь и голуби", "Терминатор", "Молчание ягнят", "Афоня", "Игра престолов"};
 

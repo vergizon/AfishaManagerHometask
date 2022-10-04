@@ -31,12 +31,12 @@ public class AfishaManager {
         return films;
     }
 
-    public String[] findLast(int count) {
+    public String[] findLast() {
         int resultLength;
-        if (count >= films.length) {
+        if (this.limit >= films.length) {
             resultLength = films.length;
         } else {
-            resultLength = count;
+            resultLength = this.limit;
         }
         String[] reversed = new String[resultLength];
         for (int i = 0; i < reversed.length; i++) {
